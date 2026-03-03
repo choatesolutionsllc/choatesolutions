@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Choate Solutions | Home & Small Business Repair Solutions</title>
+  <meta name="description" content="Choate Solutions provides punch lists, small construction repairs, minor plumbing & electrical fixture replacement, smart home setup, and water filtration across North Metro Atlanta." />
+
+  <style>
+    :root{
+      --red:#c5161b;
+      --black:#0b0b0d;
+      --white:#ffffff;
+      --gray:#f3f4f6;
+      --muted:#6b7280;
+      --card:#111216;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--white);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(197,22,27,.30), transparent 55%),
+        radial-gradient(900px 500px at 80% 25%, rgba(255,255,255,.10), transparent 55%),
+        var(--black);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:10px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width: 190px;
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 12px 20px rgba(0,0,0,.35));
+    }
+    nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      text-decoration:none; padding:8px 10px; border-radius:12px;
+      color: rgba(255,255,255,.92);
+    }
+    nav a:hover{background:rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex; align-items:center; gap:8px;
+      background: var(--red);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.18);
+      padding:10px 14px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+    }
+    .cta:active{transform: translateY(1px)}
+    .ghost{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.95);
+    }
+    .ghost:hover{background: rgba(255,255,255,.08)}
+    .pill{
+      display:inline-block;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.9);
+      font-size:.92rem;
+    }
+
+    .hero{
+      margin-top:10px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .panel{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(17,18,22,.78);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+    .hero .left{padding:26px}
+    .hero .right{padding:18px}
+    h1{
+      margin: 6px 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height:1.05;
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:0 0 16px;
+      color: rgba(255,255,255,.85);
+      font-size: 1.05rem;
+      max-width: 58ch;
+    }
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 18px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 6px}
+
+    .card{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding:14px;
+    }
+    .card h3{margin:0 0 8px; font-size: 1.05rem}
+    .card p{margin:0; color: rgba(255,255,255,.82)}
+    .card .muted{color: rgba(255,255,255,.72)}
+    .k{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.85);
+      font-size: .98rem;
+    }
+
+    .section{margin-top:16px}
+    .section .head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:12px; flex-wrap:wrap;
+      padding: 16px 18px 0;
+    }
+    .section h2{margin:0; font-size:1.35rem}
+    .section .hint{margin:0; color: rgba(255,255,255,.74)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 16px 18px 18px;
+    }
+    .svc h4{margin:0 0 6px}
+    .svc p{margin:0; color: rgba(255,255,255,.74); font-size:.98rem}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 16px 18px 18px;
+    }
+
+    form{display:grid; gap:10px; margin-top: 10px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.25);
+      color: var(--white);
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(197,22,27,.9)}
+    textarea{min-height:120px; resize:vertical}
+
+    footer{
+      margin: 18px 0 10px;
+      color: rgba(255,255,255,.70);
+      font-size:.92rem;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .smalllinks{display:flex; gap:14px; flex-wrap:wrap}
+    .smalllinks a{text-decoration:none; opacity:.9}
+    .smalllinks a:hover{opacity:1}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      nav{display:none}
+      .brand img{width: 175px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-label="Choate Solutions">
+        <!-- Put your logo in the same folder as this HTML file and name it logo.png -->
+        <img src="logo.png" alt="Choate Solutions logo" />
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="cta" href="#contact">Request Service →</a>
+    </header>
+
+    <main class="hero">
+      <section class="panel left">
+        <span class="pill">Home & Small Business Repair Solutions Company</span>
+
+        <h1>Have a problem? We’re the solution.</h1>
+
+        <p class="sub">
+          Choate Solutions helps homeowners and small businesses handle punch lists, small repairs,
+          fixture replacements, and smart-home setups — done clean, correctly, and with clear communication.
+        </p>
+
+        <div class="badges">
+          <span class="pill">Punch Lists</span>
+          <span class="pill">Minor Plumbing</span>
+          <span class="pill">Electrical Fixtures</span>
+          <span class="pill">Smart Home & WiFi</span>
+          <span class="pill">Water Filtration</span>
+        </div>
+
+        <div class="actions">
+          <a class="cta" href="tel:+17702171285">Call 770.217.1285</a>
+          <a class="ghost" href="mailto:ChoateSolutionsLLC@gmail.com">Email Us</a>
+          <a class="ghost" href="#services">View Services</a>
+        </div>
+      </section>
+
+      <aside class="panel right">
+        <div class="card">
+          <h3>Quick Contact</h3>
+          <p class="muted">
+            Phone: <strong><a href="tel:+17702171285">770.217.1285</a></strong><br/>
+            Email: <strong><a href="mailto:ChoateSolutionsLLC@gmail.com">ChoateSolutionsLLC@gmail.com</a></strong>
+          </p>
+          <div class="k">
+            <div><strong>Response:</strong> Fast</div>
+            <div><strong>Service:</strong> North Metro Atlanta</div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card" id="area">
+          <h3>Service Area</h3>
+          <p class="muted">
+            North Metro Atlanta — primarily:
+            <strong>Canton</strong>, <strong>Woodstock</strong>, <strong>Roswell</strong>,
+            <strong>Alpharetta</strong>, and <strong>Milton</strong> (and nearby).
+          </p>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <h3>Best For</h3>
+          <p class="muted">
+            “Honey-do” lists • rental turns • small office fixes • punch list cleanup • fixture swaps
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="services" class="panel section">
+      <div class="head">
+        <h2>Services</h2>
+        <p class="hint">Common requests we handle</p>
+      </div>
+
+      <div class="grid">
+        <div class="card svc">
+          <h4>Punch Lists</h4>
+          <p>Knock out multiple small items efficiently — the stuff that keeps piling up.</p>
+        </div>
+
+        <div class="card svc">
+          <h4>Small Construction Repairs</h4>
+          <p>Minor repairs and adjustments to keep things solid, safe, and looking right.</p>
+        </div>
+
+        <div class="card svc">
+          <h4>Minor Plumbing & Fixtures</h4>
+          <p>Small plumbing repairs and fixture replacement (faucets, toilets, etc.).</p>
+        </div>
+
+        <div class="card svc">
+          <h4>Electrical Switches/Outlets/Fixtures</h4>
+          <p>Outlet, switch, and light fixture replacement (like-for-like upgrades).</p>
+        </div>
+
+        <div class="card svc">
+          <h4>Dishwasher & Garbage Disposal Replacement</h4>
+          <p>Swap-out installs and clean final testing so it works the way it should.</p>
+        </div>
+
+        <div class="card svc">
+          <h4>WiFi & Smart Home Setup</h4>
+          <p>Routers, mesh WiFi, cameras, doorbells, and smart devices set up and connected.</p>
+        </div>
+
+        <div class="card svc">
+          <h4>Water Filtration</h4>
+          <p>Water filtration solutions — install help, setup, and basic troubleshooting.</p>
+        </div>
+
+        <div class="card svc">
+          <h4>Not sure?</h4>
+          <p>Send a quick description and we’ll tell you if it’s in our wheelhouse.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel section">
+      <div class="head">
+        <h2>Request Service</h2>
+        <p class="hint">Fast reply — tell us what you need</p>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h3>Call / Email</h3>
+          <p class="muted">
+            Phone: <strong><a href="tel:+17702171285">770.217.1285</a></strong><br/>
+            Email: <strong><a href="mailto:ChoateSolutionsLLC@gmail.com">ChoateSolutionsLLC@gmail.com</a></strong>
+          </p>
+
+          <div style="height:10px"></div>
+
+          <a class="cta" href="tel:+17702171285">Call Now</a>
+          <a class="ghost" href="sms:+17702171285">Text</a>
+        </div>
+
+        <div class="card">
+          <h3>Quick Request Form</h3>
+          <p class="muted" style="margin-top:0">
+            This uses “mailto” (opens the visitor’s email app). If you want a true web form that sends to your inbox
+            with no email popup, tell me where you’re hosting and I’ll wire it up.
+          </p>
+
+          <form action="mailto:ChoateSolutionsLLC@gmail.com" method="post" enctype="text/plain">
+            <input name="name" placeholder="Your name" required />
+            <input name="phone" placeholder="Phone number" />
+            <input name="email" placeholder="Email" type="email" required />
+            <input name="city" placeholder="City (Canton, Woodstock, etc.)" />
+            <textarea name="details" placeholder="What do you need help with? (Include photos if you email directly)"></textarea>
+            <button class="cta" type="submit">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Choate Solutions. All rights reserved.</div>
+      <div class="smalllinks">
+        <a href="#services">Services</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
